@@ -4,10 +4,10 @@ function refreshWeather(response) {
     let cityElement = document.querySelector("#city");
     let descriptionElement = document.querySelector("#description");
     let humidityElement = document.querySelector("#humidity");
-  let windSpeedElement = document.querySelector("#wind-speed");
-  let timeElement = document.querySelector("#time");
-  let date = new Date(response.data.time * 1000);
-  let iconElement = document.querySelector("#icon");
+    let windSpeedElement = document.querySelector("#wind-speed");
+    let timeElement = document.querySelector("#time");
+    let date = new Date(response.data.time * 1000);
+    let iconElement = document.querySelector("#icon");
 
       
     cityElement.innerHTML = response.data.city;
@@ -49,7 +49,8 @@ function refreshWeather(response) {
   function handleSearchSubmit(event) {
     event.preventDefault();
     let searchInput = document.querySelector("#search-form-input");
-  
+    let cityElement = document.querySelector("#city");
+    cityElement.innerHTML = searchInput.value;
     searchCity(searchInput.value);
   }
   
